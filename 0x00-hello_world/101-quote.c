@@ -2,11 +2,10 @@
 
 /**
   * main - Entry point
-  * @str: input parameter
   *
   * Return: 1
   */
-int main()
+int main(void)
 {
 	return (1);
 }
