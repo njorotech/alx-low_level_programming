@@ -23,5 +23,6 @@ int main(void)
 		actual = next;
 		next = before;
 	}
+	putchar('\n');
 	return (0);
 }
