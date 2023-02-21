@@ -7,15 +7,15 @@
   */
 int main(void)
 {
-	int before = 1;
-	int actual = 2;
-	int next = 3;
+	unsigned int before = 1;
+	unsigned int actual = 2;
+	unsigned int next = 3;
 	int n;
 
-	printf("%d, %d, ", 1, 2);
+	printf("%u, %u, ", 1, 2);
 	for (n = 3; n <= 50; n++)
 	{
-		printf("%d", next);
+		printf("%u", next);
 		if (n == 50)
 			continue;
 		printf(", ");
