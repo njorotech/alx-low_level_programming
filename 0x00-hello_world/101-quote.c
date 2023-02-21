@@ -7,5 +7,15 @@
   */
 int main(void)
 {
+	char c[] = "and that piece of art is useful\" - Dora Korpar, 2015-10-19";
+	int i = 0;
+
+	while (c[i] != '\n')
+	{
+		putchar(c[i]);
+		i++;
+	}
+	putchar('\n');
 	return (1);
+
 }
