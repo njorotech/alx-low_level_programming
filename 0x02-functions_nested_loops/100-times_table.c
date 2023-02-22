@@ -40,7 +40,7 @@ void print_times_table(int n)
 				if (j == n)
 					continue;
 				_putchar(',');
-				_putchar('\t');
+				_putchar(' ');
 			}
 			_putchar('\n');
 		}
