@@ -1,6 +1,7 @@
 #include "main.h"
 #include <stdlib.h>
 #include <stdio.h>
+#include <ctype.h>
 
 /**
   * main - prints the number of arguments passed into it
@@ -13,6 +14,7 @@ int main(int argc, char *argv[])
 {
 	int i;
 	int sum = 0;
+	char *ptr;
 
 	if (argv[1] == NULL)
 	{
@@ -22,6 +24,16 @@ int main(int argc, char *argv[])
 
 	for (i = 1; i < argc; i++)
 	{
+		ptr = argv[i];
+		while (*ptr != '\0')
+		{
+			if(!isdigit(*ptr))
+			{
+				printf("Error\n");
+				return 1;
+			}
+			ptr++;
+		}
 		sum += atoi(argv[i]);
 	}
 
