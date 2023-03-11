@@ -16,7 +16,7 @@ int checkPrime(int n, int i)
 		{
 			return (0);
 		}
-		return(checkPrime(n, i + 1));
+		return (checkPrime(n, i + 1));
 	}
 	return (1);
 }
