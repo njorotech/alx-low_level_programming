@@ -27,10 +27,10 @@ int main(int argc, char *argv[])
 		ptr = argv[i];
 		while (*ptr != '\0')
 		{
-			if(!isdigit(*ptr))
+			if (!isdigit(*ptr))
 			{
 				printf("Error\n");
-				return 1;
+				return (1);
 			}
 			ptr++;
 		}
