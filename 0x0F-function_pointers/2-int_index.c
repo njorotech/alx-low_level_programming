@@ -21,7 +21,7 @@ int int_index(int *array, int size, int (*cmp)(int))
 	for (i = 0; i < size; i++)
 	{
 		check = cmp(array[i]);
-		if (check)
+		if (check != 0)
 		{
 			return (i);
 		}
