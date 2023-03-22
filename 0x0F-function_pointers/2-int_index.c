@@ -23,7 +23,7 @@ int int_index(int *array, int size, int (*cmp)(int))
 		check = cmp(array[i]);
 		if (check)
 		{
-			return (check);
+			return (i);
 		}
 
 	}
