@@ -30,7 +30,7 @@ unsigned int binary_to_uint(const char *b)
 		}
 		else
 		{
-			j = d << (len -i - 1);
+			j = d << (len - i - 1);
 			sum += j;
 		}
 		i++;
