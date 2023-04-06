@@ -9,8 +9,7 @@
   */
 unsigned int binary_to_uint(const char *b)
 {
-	unsigned int i = 0, k = 0, len = 0, j, sum = 0;
-	char d;
+	unsigned int i = 0, k = 0, len = 0, j, sum = 0, d;
 
 	if (b == NULL)
 	{
@@ -24,13 +23,13 @@ unsigned int binary_to_uint(const char *b)
 	while (b[i] != '\0')
 	{
 		d = b[i];
-		if ((d != '0') || (d != '1'))
+		if (!((d == '0') || (d == '1')))
 		{
 			return (0);
 		}
 		else
 		{
-			j = d << (len - i - 1);
+			j = (d - '0') << (len - i - 1);
 			sum += j;
 		}
 		i++;
