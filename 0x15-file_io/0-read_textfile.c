@@ -13,6 +13,7 @@
 ssize_t read_textfile(const char *filename, size_t letters)
 {
 	int fd;
+	int i = 0;
 	size_t printedLetters;
 	char *buff;
 
@@ -29,9 +30,19 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	}
 
 	buff = malloc(sizeof(char) * letters);
+	if (buff == NULL)
+	{
+		close(fd);
+		return (0);
+	}
 
 	printedLetters = read(fd, buff, letters);
-	printf("%s\n", buff);
+	while (buff[i] != '\0')
+	{
+		_putchar(buff[i]);
+		i++;
+	}
+	_putchar('\n');
 	close(fd);
 	if ((int)printedLetters == -1)
 	{
