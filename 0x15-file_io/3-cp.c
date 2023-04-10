@@ -20,7 +20,6 @@ int main(int argc, char *argv[])
 	}
 
 	fd1 = open(argv[1], O_RDONLY);
-	fd2 = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH);
 
 	if (fd1 == -1)
 	{
@@ -28,6 +27,14 @@ int main(int argc, char *argv[])
 		exit(98);
 	}
 
+	fd2 = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH);
+
+
+	if (fd2 == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
+		exit(99);
+	}
 	buff = malloc(sizeof(char) * 1024);
 
 	if (buff == NULL)
@@ -39,11 +46,6 @@ int main(int argc, char *argv[])
 	readbytes = read(fd1, buff, 1024);
 	close1 = close(fd1);
 
-	if (fd2 == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
-		exit(99);
-	}
 	/*writtenbytes = */write(fd2, buff, readbytes);
 	close2 = close(fd2);
 
