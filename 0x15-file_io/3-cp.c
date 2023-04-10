@@ -10,7 +10,7 @@
 int main(int argc, char *argv[])
 {
 	int fd1, fd2, close1, close2;
-	char *buff;
+	char buff[BUFFER_SIZE];
 	ssize_t readbytes/*, writtenbytes*/;
 
 	if (argc != 3)
@@ -34,13 +34,6 @@ int main(int argc, char *argv[])
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 		exit(99);
-	}
-	buff = malloc(sizeof(char) * 1024);
-
-	if (buff == NULL)
-	{
-		close(fd1);
-		return (0);
 	}
 
 	readbytes = read(fd1, buff, 1024);
