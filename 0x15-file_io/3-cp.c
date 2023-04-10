@@ -45,16 +45,14 @@ int main(int argc, char *argv[])
 			exit(99);
 		}
 	}
-	close1 = close(fd1);
-	close2 = close(fd2);
 
-	if (close1 == -1)
+	if (close(fd1) == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd1);
 		exit(100);
 	}
 
-	if (close2 == -1)
+	if (close(fd2) == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd2);
 		exit(100);
