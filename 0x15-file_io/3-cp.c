@@ -20,7 +20,7 @@ int main(int argc, char *argv[])
 	}
 
 	fd1 = open(argv[1], O_RDONLY);
-	fd2 = open(argv[2], O_WRONLY | O_TRUNC);
+	fd2 = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH);
 
 	if (fd1 == -1)
 	{
