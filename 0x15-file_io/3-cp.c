@@ -11,7 +11,7 @@ int main(int argc, char *argv[])
 {
 	int fd1, fd2, close1, close2;
 	char buff[BUFFER_SIZE];
-	ssize_t readbytes/*, writtenbytes*/;
+	ssize_t readbytes, writtenbytes;
 
 	if (argc != 3)
 	{
@@ -38,7 +38,12 @@ int main(int argc, char *argv[])
 
 	while ((readbytes = read(fd1, buff, BUFFER_SIZE)) > 0)
 	{
-		/*writtenbytes = */write(fd2, buff, readbytes);
+		writtenbytes = write(fd2, buff, readbytes);
+		if(writtenbytes != readbytes)
+		{
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
+			exit(99);
+		}
 	}
 	close1 = close(fd1);
 	close2 = close(fd2);
