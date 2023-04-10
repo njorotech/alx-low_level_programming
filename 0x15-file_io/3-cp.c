@@ -9,7 +9,7 @@
   */
 int main(int argc, char *argv[])
 {
-	int fd1, fd2, close1, close2;
+	int fd1, fd2;
 	char buff[BUFFER_SIZE];
 	ssize_t readbytes, writtenbytes;
 
