@@ -12,7 +12,7 @@ int create_file(const char *filename, char *text_content)
 {
 	int fd, length;
 
-	if ((filename == NULL) || (text_content == NULL))
+	if (filename == NULL)
 	{
 		return (-1);
 	}
@@ -24,6 +24,7 @@ int create_file(const char *filename, char *text_content)
 	}
 	length = strlen(text_content);
 	write(fd, text_content, length);
+	close(fd);
 
 	return (1);
 }
