@@ -2,6 +2,7 @@
 
 /**
   * read_textfile - reads a file and prints it to stdio
+  * @filename: file to be read
   * @letters: number of letters to read and print
   *
   * Return: The actual number of letters read and printed, or
@@ -26,7 +27,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	{
 		return (0);
 	}
-	
+
 	buf = malloc(sizeof(char) * letters);
 	if (buf == NULL)
 	{
