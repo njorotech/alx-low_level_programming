@@ -18,10 +18,13 @@ char *_strchr(char *s, char c)
 	{
 		if (s[i] == c)
 		{
-			str = &s[i];
 			break;
 		}
 		i++;
+	}
+	if (s[i] == c)
+	{
+		str = &s[i];
 	}
 	return (str);
 }
