@@ -12,6 +12,10 @@ char *argstostr(int ac, char **av)
 	char *str;
 	int length = 0, i, j, k, m = 0;
 
+	if (ac < 1)
+	{
+		return (NULL);
+	}
 	/*compute the length of the arguments*/
 	for (i = 0; i < ac; i++)
 	{
