@@ -8,3 +8,4 @@ char *argstostr(int ac, char **av);
 char **strtow(char *str);
 #include <stdlib.h>
 #include <string.h>
+#include <stdio.h>
