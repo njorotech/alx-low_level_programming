@@ -24,19 +24,21 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 		add_dnodeint(h, n);
 	}
 
-	while (current != NULL)
+	while (current != NULL && i < idx)
 	{
-		if (i == idx)
-		{
-			newnode = malloc(sizeof(dlistint_t));
-			newnode->n = n;
-			newnode->prev = current->prev;
-			newnode->next = current;
-			current->prev = newnode;
-			current = newnode->next;
-		}
 		i++;
 		current = current->next;
 	}
+	if (current == NULL)
+	{
+		return (NULL);
+	}
+	newnode = malloc(sizeof(dlistint_t));
+	newnode->n = n;
+	newnode->prev = current->prev;
+	newnode->next = current;
+	current->prev = newnode;
+	current = newnode->next;
+
 	return (newnode);
 }
